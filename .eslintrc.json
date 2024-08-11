@@ -6,8 +6,6 @@
     "quotes": [0],
     "avoidEscape": 0,
     "allowTempleteLiterals": 0,
-    "no-useless-escape": 0,
-    
-
+    "no-useless-escape": 0
   }
 }
