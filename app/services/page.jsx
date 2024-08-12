@@ -6,26 +6,26 @@ import Link from 'next/link';
 const services = [
     {
         num: '01',
-        title: 'Web Development',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dignissimos.',
+        title: 'Full-stack Developer',
+        description: 'Developing comprehensive solutions by handling both front-end and back-end aspects of web projects.',
         href: ""
     },
     {
         num: '02',
-        title: 'UI/UX Design',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dignissimos.',
+        title: 'Front-end Developer',
+        description: 'Creating visually appealing and interactive user interfaces to enhance user engagement and experience.',
         href: ""
     },
     {
         num: '03',
-        title: 'Logo Design',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dignissimos.',
+        title: 'Back-end Developer',
+        description: 'Designing and maintaining robust server-side applications to ensure seamless data management and functionality.',
         href: ""
     },
     {
         num: '04',
-        title: 'SEO',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dignissimos.',
+        title: 'UI/UX Design',
+        description: 'Crafting intuitive and engaging user interfaces and experiences to drive user satisfaction and usability.',
         href: ""
     },
 ];

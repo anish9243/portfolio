@@ -20,7 +20,7 @@ const projects = [
     num: '01',
     category: 'frontend',
     title: 'project 1',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, quibusdam',
+    description: 'Developed a dynamic and responsive front-end interface with modern web technologies and design principles.',
     stack: [
       {
         name: "Html 5"
@@ -40,7 +40,7 @@ const projects = [
     num: '02',
     category: 'fullstack',
     title: 'project 2',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, quibusdam',
+    description: 'Built a full-stack application using the latest technologies for seamless functionality and performance.',
     stack: [
       {
         name: "Next.js"
@@ -60,7 +60,7 @@ const projects = [
     num: '03',
     category: 'frontend',
     title: 'project 3',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, quibusdam',
+    description: 'Created an engaging front-end experience with a focus on responsive design and user interaction.',
     stack: [
       {
         name: "Next.js"
