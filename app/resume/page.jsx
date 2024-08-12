@@ -9,7 +9,7 @@ import { SiTailwindcss, SiNextdotjs, SiCsharp, SiMysql } from 'react-icons/si'
 
 const about = {
   title: 'About Me',
-  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro.Lorem ipsum dolor sit.',
+  description: 'Experienced web developer with a passion for creating impactful digital solutions and innovative designs.',
   info: [
     {
       fieldName: "Name",
@@ -50,7 +50,7 @@ const about = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My Experience',
-  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro.Lorem ipsum dolor sit.',
+  description: 'A journey of transforming ideas into impactful digital solutions through diverse development roles.',
   items: [
     {
       company: "Tech Innovators Inc.",
@@ -74,7 +74,7 @@ const experience = {
 const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My Education',
-  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, porro.Lorem ipsum dolor sit.',
+  description: 'Passionate about developing innovative web solutions and continuously expanding my knowledge in the field of web development.',
   items: [
     {
       institute: "Humber College",
@@ -92,7 +92,7 @@ const education = {
 //skills data   
 const skills = {
   title: "My Skills",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa ratione harum",
+  description: "Experienced in web development with expertise in modern technologies, tools, and frameworks for impactful solutions.",
   skillList: [
     {
       icon: <FaHtml5 />,
