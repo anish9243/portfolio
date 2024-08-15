@@ -59,9 +59,11 @@ const Contact = () => {
     const postData = {
         email, 
         name: `${firstname} ${lastname}`, // Assuming you want to send full name
-        subject: `Service Request: ${service}`, // Example of how you might want to set the subject
-        message
+        service: `${service}`, // Example of how you might want to set the subject
+        message,
+        phone
     };
+    console.log(postData)
 
     try {
         const response = await fetch('/api/send-email', {
