@@ -144,7 +144,7 @@ const Contact = () => {
                 />
               </div>
               {/* Service Selection */}
-              <Select onValueChange={handleSelectChange} required>
+              <Select name="service" onValueChange={handleSelectChange} required>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>

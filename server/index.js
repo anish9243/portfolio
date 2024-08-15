@@ -27,10 +27,10 @@ app.use((req, res, next) => {
 
 // Route to handle the form submission and send an email
 app.post("/api/send-email", async (req, res) => {
-  const { name, email, message, service } = req.body;
+  const { name, email, message, service, phone } = req.body;
 
   const subject = `Inquiry about ${service} from ${name}`;
-  const emailText = `You have received a new inquiry from ${name} (${email}).\n\nService: ${service}\n\nMessage:\n${message}`;
+  const emailText = `You have received a new inquiry from ${name} (${email}).\n\nService: ${service}\n\nMessage:\n${message} \nPhone:${phone}`;
 
   const result = await sendEmail(email, subject, emailText);
 
