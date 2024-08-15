@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
 import { motion } from "framer-motion";
 
-const info = [
+const contactInfo = [
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
@@ -24,7 +24,7 @@ const info = [
     title: 'Address',
     description: 'Toronto, ON, Canada',
   },
-]
+];
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,37 +38,61 @@ const Contact = () => {
 
   const [status, setStatus] = useState("");
 
+  // Handle input field changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle select field changes
   const handleSelectChange = (value) => {
     setFormData({ ...formData, service: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Accessing formData properties correctly from state
+    const { email, firstname, lastname, phone, service, message } = formData;
+
+    // Properly structuring the POST data
+    const postData = {
+        email, 
+        name: `${firstname} ${lastname}`, // Assuming you want to send full name
+        subject: `Service Request: ${service}`, // Example of how you might want to set the subject
+        message
+    };
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        });
 
-      const data = await response.json();
-      if (data.success) {
-        setStatus("Message sent successfully!");
-      } else {
-        setStatus("Failed to send message.");
-      }
+        const result = await response.json();
+        console.log(result)
+        if (response.ok) {
+            console.log('Success:', result);
+            setStatus("Message sent successfully!");
+            setFormData({
+                firstname: "",
+                lastname: "",
+                email: "",
+                phone: "",
+                service: "",
+                message: "",
+            }); // Resetting form after successful submission
+        } else {
+            throw new Error(result.error || 'Something went wrong');
+        }
     } catch (error) {
-      setStatus("An error occurred while sending the message.");
+        console.error('Error:', error.message);
+        setStatus("Failed to send message. Error: " + error.message);
     }
-  };
-
+};
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -77,22 +101,50 @@ const Contact = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* form */}
+          {/* Contact Form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" onSubmit={handleSubmit}>
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 I'm excited to collaborate on your project. Please fill out the form below, and I'll get back to you shortly.
               </p>
-              {/* input */}
+              {/* Input Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input name="firstname" type="text" placeholder="Firstname" value={formData.firstname} onChange={handleChange} />
-                <Input name="lastname" type="text" placeholder="Lastname" value={formData.lastname} onChange={handleChange} />
-                <Input name="email" type="email" placeholder="Email address" value={formData.email} onChange={handleChange} />
-                <Input name="phone" type="tel" placeholder="Phone number" value={formData.phone} onChange={handleChange} />
+                <Input
+                  name="firstname"
+                  type="text"
+                  placeholder="Firstname"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  required
+                />
+                <Input
+                  name="lastname"
+                  type="text"
+                  placeholder="Lastname"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  required
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Email address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <Input
+                  name="phone"
+                  type="tel"
+                  placeholder="Phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              {/* select */}
-              <Select onValueChange={handleSelectChange}>
+              {/* Service Selection */}
+              <Select onValueChange={handleSelectChange} required>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -105,23 +157,28 @@ const Contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* textarea */}
+              {/* Message Textarea */}
               <Textarea
                 name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
                 value={formData.message}
                 onChange={handleChange}
+                required
               />
-              {/* btn */}
-              <Button size="md" className="max-w-40" type="submit">Send message</Button>
+              {/* Submit Button */}
+              <Button size="md" className="max-w-40" type="submit">
+                Send message
+              </Button>
+              {/* Status Message */}
               <p className="text-white/60 mt-4">{status}</p>
             </form>
           </div>
-          {/* info */}
+
+          {/* Contact Information */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
-              {info.map((item, index) => (
+              {contactInfo.map((item, index) => (
                 <li key={index} className="flex items-center gap-6">
                   <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
                     <div className="text-[28px]">{item.icon}</div>
