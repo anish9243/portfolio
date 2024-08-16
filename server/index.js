@@ -47,7 +47,7 @@ app.post("/api/send-email", async (req, res) => {
 // About page route
 app.get("/api/services", async (request, response) => {
   let servicesList = await db.getServices();
-  response.json(servicesList)
+  response.status(200).json(servicesList)
 });
 
 // Start the server and listen on the specified port
