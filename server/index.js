@@ -7,6 +7,8 @@ dotenv.config();
 
 const { sendEmail } = require("./modules/api/nodemailer");
 
+const db = require("./modules/db");
+
 // Initialize an Express application
 const app = express();
 
@@ -37,11 +39,16 @@ app.post("/api/send-email", async (req, res) => {
   if (result.success) {
     return res.status(200).json({ message: "Email sent successfully", info: result.info });
   } else {
-    console.error('Email sending failed:', result.error);  // Log the error
+    console.error("Email sending failed:", result.error); // Log the error
     return res.status(500).json({ message: "Failed to send email", error: result.error.message });
   }
 });
 
+// About page route
+app.get("/api/services", async (request, response) => {
+  let servicesList = await db.getServices();
+  response.json(servicesList)
+});
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
