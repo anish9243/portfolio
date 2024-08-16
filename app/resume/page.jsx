@@ -9,7 +9,7 @@ import { SiTailwindcss, SiNextdotjs, SiCsharp, SiMysql } from 'react-icons/si'
 
 const about = {
   title: 'About Me',
-  description: 'Experienced web developer with a passion for creating impactful digital solutions and innovative designs.',
+  description: 'An experienced web developer passionate about crafting impactful digital solutions and bringing innovative designs to life.',
   info: [
     {
       fieldName: "Name",
@@ -33,7 +33,7 @@ const about = {
     },
     {
       fieldName: "LinkdIn",
-      fieldValue: "anish1507"
+      fieldValue: "www.linkedin.com/in/anish1507"
     },
     {
       fieldName: "Freelance",
@@ -50,7 +50,7 @@ const about = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My Experience',
-  description: 'A journey of transforming ideas into impactful digital solutions through diverse development roles.',
+  description: 'A journey of transforming innovative ideas into impactful digital solutions across diverse development roles and experiences.',
   items: [
     {
       company: "Tech Innovators Inc.",
@@ -252,21 +252,22 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full text-center xl:text-left ">
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold ">{about.title}</h3>
-                <p className=" max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                <ul className=" grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index)=> {
-                    return (
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>
-
-                    );
-                  })}
-                </ul>
+            <TabsContent value="about" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="flex flex-col gap-4 pe-4">
+                    {about.info.map((item, index) => {
+                      return (
+                        <li key={index} className="flex justify-between w-full border-b py-2 border-b-white/20">
+                          <span>{item.fieldName}</span>
+                          <span className="font-medium">{item.fieldValue}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
           </div>
