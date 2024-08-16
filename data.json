@@ -1,0 +1,26 @@
+[
+    {
+        "num": "01",
+        "title": "Full-stack Developer",
+        "description": "Developing comprehensive solutions by handling both front-end and back-end aspects of web projects.",
+        "href": ""
+    },
+    {
+        "num": "02",
+        "title": "Front-end Developer",
+        "description": "Creating visually appealing and interactive user interfaces to enhance user engagement and experience.",
+        "href": ""
+    },
+    {
+        "num": "03",
+        "title": "Back-end Developer",
+        "description": "Designing and maintaining robust server-side applications to ensure seamless data management and functionality.",
+        "href": ""
+    },
+    {
+        "num": "04",
+        "title": "UI/UX Design",
+        "description": "Crafting intuitive and engaging user interfaces and experiences to drive user satisfaction and usability.",
+        "href": ""
+    }
+]
