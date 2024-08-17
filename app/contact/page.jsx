@@ -160,38 +160,6 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-                <Input
-                  name="firstname"
-                  type="text"
-                  placeholder="Firstname"
-                  value={formData.firstname}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  name="lastname"
-                  type="text"
-                  placeholder="Lastname"
-                  value={formData.lastname}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
               </div>
               {/* Service Selection */}
               <Select name="service" onValueChange={handleSelectChange} required>
@@ -201,13 +169,13 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="Web Development">Web Development</SelectItem>
+                    <SelectItem value="Full-stack Developer">Full-stack Developer</SelectItem>
+                    <SelectItem value="Front-end Developer">Front-end Developer</SelectItem>
+                    <SelectItem value="Back-end Developer">Back-end Developer</SelectItem>
                     <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-                    <SelectItem value="Logo Design">Logo Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* Message Textarea */}
               {/* Message Textarea */}
               <Textarea
                 name="message"
@@ -222,17 +190,10 @@ const Contact = () => {
                 Send message
               </Button>
               {/* Status Message */}
-              {/* Submit Button */}
-              <Button size="md" className="max-w-40" type="submit">
-                Send message
-              </Button>
-              {/* Status Message */}
               <p className="text-white/60 mt-4">{status}</p>
             </form>
           </div>
-
-          {/* Contact Information */}
-
+          
           {/* Contact Information */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
