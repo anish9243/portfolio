@@ -261,7 +261,7 @@ const Resume = () => {
                     {about.info.map((item, index) => {
                       return (
                         <li key={index} className="flex justify-between w-full border-b py-2 border-b-white/20">
-                          <span>{item.fieldName}</span>
+                          <span className='text-white/60'>{item.fieldName}</span>
                           <span className="font-medium">{item.fieldValue}</span>
                         </li>
                       );
