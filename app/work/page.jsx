@@ -23,54 +23,48 @@ const projects = [
     description: 'Developed a dynamic and responsive front-end interface with modern web technologies and design principles.',
     stack: [
       {
-        name: "Html 5"
+        name: "React JS"
       },
       {
-        name: "Css 3"
-      },
-      {
-        name: "Javascript"
-      },
+        name: "ReactApp "
+      }
     ],
     image: '/assets/work/thumb1.png',
-    live: '',
-    github: "",
+    live: 'https://sckilled.codeanish.me',
+    github: "https://github.com/anish9243/sckilled-frontend-main",
   },
   {
     num: '02',
-    category: 'fullstack',
+    category: 'frontend',
     title: 'project 2',
-    description: 'Built a full-stack application using the latest technologies for seamless functionality and performance.',
+    description: 'Built a frontend application using Html, CSS, JS for seamless functionality and performance.',
     stack: [
       {
-        name: "Next.js"
+        name: "HTML"
       },
       {
-        name: "Tailwind.css"
+        name: "CSS"
       },
       {
-        name: "Node.js"
+        name: "JavaScript"
       },
     ],
     image: '/assets/work/thumb2.png',
-    live: '',
-    github: "",
+    live: 'https://uselessweb-goat.codeanish.me',
+    github: "https://github.com/anish9243/UselessWeb-Goat",
   },
   {
     num: '03',
-    category: 'frontend',
+    category: 'Figma',
     title: 'project 3',
-    description: 'Created an engaging front-end experience with a focus on responsive design and user interaction.',
+    description: 'Created an engaging figma experience with a focus on responsive design and user interaction.',
     stack: [
       {
-        name: "Next.js"
-      },
-      {
-        name: "Tailwind.css"
-      },
+        name: "Figma"
+      }
     ],
     image: '/assets/work/thumb3.png',
-    live: '',
+    live: 'https://www.figma.com/proto/RkNhLLwmV2P5wag6H424pw/IXD-5105---Milestone-2?node-id=524-18011&t=toQGjR7mvFUK03gb-0&scaling=scale-down&content-scaling=fixed&page-id=463%3A13293&starting-point-node-id=524%3A18011&show-proto-sidebar=1',
     github: "",
   },
 ];
