@@ -53,6 +53,11 @@ const experience = {
   description: 'A journey of transforming innovative ideas into impactful digital solutions across diverse development roles and experiences.',
   items: [
     {
+      company: "G.M Digital Inc.",
+      position: "Web Developer Intern",
+      duration: "September-2024 - Present",
+    },
+    {
       company: "Tech Innovators Inc.",
       position: "Full Stack Developer",
       duration: "June-2022 - August-2023",
