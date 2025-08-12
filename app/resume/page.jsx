@@ -55,7 +55,7 @@ const experience = {
     {
       company: "G.M Digital Inc.",
       position: "Web Developer Intern",
-      duration: "September-2024 - Present",
+      duration: "September-2024 - Jan-2025",
     },
     {
       company: "Tech Innovators Inc.",
@@ -81,6 +81,11 @@ const education = {
   title: 'My Education',
   description: 'Passionate about developing innovative web solutions and continuously expanding my knowledge in the field of web development.',
   items: [
+    {
+      institute: "York University",
+      degree: "Cloud Computing Post Graduation Degree",
+      duration: "January-2025 - August-2025",
+    },
     {
       institute: "Humber College",
       degree: "Web Devlopment Post Graduation Degree",

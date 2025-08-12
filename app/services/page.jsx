@@ -1,5 +1,3 @@
-// pages/services.jsx or app/services/page.jsx (adjust depending on your project structure)
-
 "use client";  // This line tells Next.js that this component should be treated as a Client Component
 
 import React, { useState, useEffect } from "react";
